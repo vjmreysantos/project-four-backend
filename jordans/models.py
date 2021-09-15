@@ -9,21 +9,9 @@ class Jordan(models.Model):
     price = models.FloatField()
     liked_by = models.ManyToManyField(
       'jwt_auth.User',
-      related_name='liked_jordans',
+      related_name='liked_jordan',
       blank=True
     )
 
     def __str__(self):
         return f'{self.name}'
-
-class Comment(models.Model):
-    text = models.TextField(max_length=300)
-    created_at = models.DateTimeField(auto_now_add=True)
-    jordan = models.ForeignKey(
-        Jordan,
-        related_name='comments',
-        on_delete=models.CASCADE
-    )
-
-    def __str__(self):
-        return f'{self.jordan} - {self.id}'
