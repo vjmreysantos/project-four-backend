@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import NotFound, PermissionDenied
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework import status
 from django.contrib.auth import get_user_model
 from django.conf import settings
@@ -53,52 +53,10 @@ class LoginView(APIView):
             'message': f'Welcome back {username}'
         }, status=status.HTTP_200_OK)
 
-class ProfileListView(APIView):
-
-    def get(self, request):
-        users = User.objects.all()
-        serialized_users = UserRegisterSerializer(users, many=True)
-        return Response(serialized_users.data, status=status.HTTP_200_OK)
-
 class ProfileView(APIView):
 
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
-    def get_user(self, username):
-        try:
-            return User.objects.get(username=username)
-        except User.DoesNotExist:
-            raise NotFound()
-    
     def get(self, request):
-        user = self.get_user(username=request.user.username)
-        serialized_user = UserProfileSerializer(user)
-        return Response(serialized_user.data)
-
-    def put(self, request):
-        user_to_update = self.get_user(username= request.user.username)
-        updated_user = UserProfileSerializer(user_to_update, data=request.data, context={'request': 'update'})
-        if updated_user.is_valid():
-            updated_user.save()
-            return Response(updated_user.data, status=status.HTTP_202_ACCEPTED)
-        return Response(updated_user.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-
-    def delete(self, request):
-        user_to_delete = self.get_user(username= request.user.username)
-        user_to_delete.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-
-class ProfileDetailView(APIView):
-
-    permission_classes = (IsAuthenticated, )
-
-    def get_user(self, username):
-        try:
-            return User.objects.get(username=username)
-        except User.DoesNotExist:
-            raise NotFound()
-
-    def get(self, _request, username):
-        user = self.get_user(username)
-        serialized_user = UserRegisterSerializer(user)
+        serialized_user = UserProfileSerializer(request.user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)

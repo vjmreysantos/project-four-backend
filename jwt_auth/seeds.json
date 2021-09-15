@@ -1,0 +1,137 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$den670smnuhy15b1kXStBr$huzytfilrdl3zaIEVRF6qGVsGlNvNa5a9OCa1TOgJAQ=",
+    "last_login": "2021-09-14T12:41:54.530Z",
+    "is_superuser": true,
+    "username": "victor",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-09-14T12:30:57.183Z",
+    "email": "victor@email.com",
+    "profile_image": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$70Hg9QWpNbAMp6Hmb3V1HC$XIACYmkfCPxPs6a2ax8TpX+4q2CltARazCz9m39b4hE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-14T15:01:03.453Z",
+    "email": "admin@email.com",
+    "profile_image": "image.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "baller111",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "baller111",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-14T21:54:24Z",
+    "email": "baller111@email.com",
+    "profile_image": "https://thispersondoesnotexist.com/image",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "baller112",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "baller112",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-14T21:55:29Z",
+    "email": "baller112@email.com",
+    "profile_image": "https://thispersondoesnotexist.com/image",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "baller113",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "baller113",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-14T21:55:56Z",
+    "email": "baller113@email.com",
+    "profile_image": "https://thispersondoesnotexist.com/image",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "baller114",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "baller114",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-14T21:56:49Z",
+    "email": "baller114@email.com",
+    "profile_image": "https://thispersondoesnotexist.com/image",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 14,
+  "fields": {
+    "password": "baller115",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "baller115",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-14T21:57:37Z",
+    "email": "baller115@email.com",
+    "profile_image": "https://thispersondoesnotexist.com/image",
+    "groups": [],
+    "user_permissions": [
+      28
+    ]
+  }
+}
+]
