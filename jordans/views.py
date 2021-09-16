@@ -24,7 +24,7 @@ class JordanDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = JordanSerializer
 
 class JordanLikeView(APIView):
-    ''' Adds likes to characters or removes if already liked '''
+    ''' Adds likes to Jordans or removes if already liked '''
 
     def post(self, request, jordan_pk):
 
