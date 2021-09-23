@@ -1,9 +1,10 @@
 
-from jordans.serializers import JordanSerializer
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
+
+from jordans.serializers import JordanSerializer, CommentSerializer
 
 User = get_user_model()
 
@@ -29,7 +30,14 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
 class UserProfileSerializer(serializers.ModelSerializer):
     liked_jordan = JordanSerializer(many=True)
+    comments_made = CommentSerializer(many=True)
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'profile_image', 'liked_jordan')
+        fields = (
+            'username',
+            'email',
+            'profile_image',
+            'liked_jordan',
+            'comments_made'
+        )
