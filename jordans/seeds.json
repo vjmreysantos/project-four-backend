@@ -1,0 +1,34 @@
+[
+{
+  "model": "jordans.jordan",
+  "pk": 1,
+  "fields": {
+    "name": "Air Jordan I",
+    "image": "https://static.nike.com/a/images/dut6y4fwlnm6tzw2c2zc/air-jordan-i-og-black-red.png",
+    "release_date": "1985",
+    "color": "Red / Black",
+    "size": "UK 10 / US 10.5 / EU 44.5",
+    "price": 125.0,
+    "liked_by": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "jordans.jordan",
+  "pk": 2,
+  "fields": {
+    "name": "Air Jordan I",
+    "image": "https://static.nike.com/a/images/ovzm7z6a88tkwgby5pz7/air-jordan-i-og-white-black-.png",
+    "release_date": "1985",
+    "color": "White / Black",
+    "size": "UK 9 / US 9.5 / EU 43.5",
+    "price": 125.0,
+    "liked_by": [
+      1,
+      2
+    ]
+  }
+}
+]
